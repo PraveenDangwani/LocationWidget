@@ -1,0 +1,27 @@
+/* SearchBox.css */
+
+/* Wrapper for search box with icon */
+.search-box-wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: 15px; /* Adjust as needed */
+  }
+  
+  .search-box {
+    width: 100%;
+    padding: 6px 8px 6px 30px; /* Padding to create space for icon */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  /* Style for the search icon */
+  .search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 14px;
+  }
+  

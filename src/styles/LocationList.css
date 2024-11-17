@@ -1,0 +1,44 @@
+.location-list {
+    max-height: 370px;
+    overflow-y: auto;
+    border-top: 1px solid #ddd;
+    padding-top: 8px;
+    padding-right: 30px; /* Increased space to avoid overlap with the alphabet index */
+  }
+  
+  .location-item {
+    display: flex;
+    align-items: center;
+    padding: 4px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .location-item input[type="checkbox"] {
+    margin-right: 8px;
+    transform: scale(0.9);
+  }
+  
+  .location-item label {
+    flex: 1;
+    font-size: 14px;
+    color: #333;
+  }
+
+  .location-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .flag-icon {
+    width: 20px;
+    height: 15px;
+    margin-right: 8px;
+    vertical-align: middle;
+    border-radius: 2px; /* Optional rounded corners */
+    object-fit: cover; /* Ensures flags are properly scaled */
+  }
+  
+  
+  
