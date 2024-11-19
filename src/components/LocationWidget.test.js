@@ -6,7 +6,6 @@ window.HTMLElement.prototype.scrollIntoView = jest.fn();
 
 // Mocking locations data globally
 jest.mock('../data/locations', () => {
-    console.log('old mock');
     return { sampleLocations: [
       'Amsterdam - Netherlands',
       'Berlin - Germany',
