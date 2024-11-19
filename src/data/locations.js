@@ -46,7 +46,7 @@ export const sampleLocations = [
     "Dublin - Ireland",
     "Rome - Italy",
     "Tokyo - Japan",
-    "Luxembourg - Luxembourg",
+    "Luxembourg City - Luxembourg",
     "Mexico City - Mexico",
     "Oslo - Norway",
     "Lisbon - Portugal",

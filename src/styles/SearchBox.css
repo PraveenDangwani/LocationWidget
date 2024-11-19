@@ -1,5 +1,3 @@
-/* SearchBox.css */
-
 /* Wrapper for search box with icon */
 .search-box-wrapper {
     position: relative;
@@ -23,5 +21,23 @@
     transform: translateY(-50%);
     color: #999;
     font-size: 14px;
+  }
+  
+  /* Clear button styling */
+  .clear-button {
+    position: absolute;
+    right: 10px; /* Position at the right of the input */
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #007bff; /* Match theme */
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .clear-button:hover {
+    color: #0056b3; /* Darker shade for hover effect */
+    text-decoration: underline; /* Optional: underline on hover */
   }
   

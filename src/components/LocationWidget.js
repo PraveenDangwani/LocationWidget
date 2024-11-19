@@ -1,15 +1,13 @@
-// src/components/LocationWidget.js
 import React, { useState, useEffect, useRef } from 'react';
 import SearchBox from './SearchBox';
 import LocationList from './LocationList';
 import AlphabetIndex from './AlphabetIndex';
-import StateToggleIcons from './StateToggleIcons';
 import { sampleLocations } from '../data/locations';
 import '../styles/LocationWidget.css';
-import ExpandIcon from '../assets/icons/expand.png'
-// import CollapseIcon from '../assets/icons/collapse.png'
-import MaximizeIcon from '../assets/icons/EndBtn.png'
-import MinimizeIcon from '../assets/icons/minimise.png'
+import CollapseIcon from '../assets/icons/collapse.png'
+import ExpandIcon from '../assets/icons/expand.png';
+import MaximizeIcon from '../assets/icons/EndBtn.png';
+import MinimizeIcon from '../assets/icons/minimise.png';
 
 const LocationWidget = () => {
   const [locations, setLocations] = useState([]);
@@ -18,6 +16,7 @@ const LocationWidget = () => {
   const [widgetState, setWidgetState] = useState('normal'); // 'normal', 'minimized', 'collapsed'
   const locationRefs = useRef({});
 
+  // Initialize locations and selected state
   useEffect(() => {
     const sortedLocations = sampleLocations.sort((a, b) => a.localeCompare(b));
     setLocations(sortedLocations);
@@ -30,6 +29,7 @@ const LocationWidget = () => {
     setSelectedLocations(initialSelections);
   }, []);
 
+  // Handle search input
   const handleSearch = (searchTerm) => {
     const filtered = locations.filter((loc) =>
       loc.toLowerCase().includes(searchTerm.toLowerCase())
@@ -38,6 +38,7 @@ const LocationWidget = () => {
     locationRefs.current = {}; // Reset refs when filtering
   };
 
+  // Clear all selections
   const handleClearAll = () => {
     const clearedSelections = {};
     locations.forEach((loc) => {
@@ -46,47 +47,57 @@ const LocationWidget = () => {
     setSelectedLocations(clearedSelections);
   };
 
+  // Toggle location selection
   const toggleLocation = (location) => {
     setSelectedLocations((prevSelections) => ({
-      ...prevSelections,
-      [location]: !prevSelections[location],
+        ...prevSelections,
+        [location]: !prevSelections[location],
     }));
   };
 
+  // Scroll to a specific letter
   const scrollToLetter = (letter) => {
     if (locationRefs.current[letter]) {
       locationRefs.current[letter].scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
+  // Extract unique letters for AlphabetIndex
   const uniqueLetters = Array.from(
     new Set(filteredLocations.map((location) => location[0].toUpperCase()))
+  );
+
+  // Render icon button
+  const renderIconButton = (tooltip, icon, onClick) => (
+    <button className="tooltip icon-button" data-tooltip={tooltip} onClick={onClick}>
+      <img src={icon} alt={tooltip} className="icon" />
+    </button>
   );
 
   return (
     <div className={`location-widget ${widgetState}`}>
       {widgetState === 'normal' && (
         <>
-          <div>
-            {/* <button
-              onClick={() => setWidgetState('collapsed')}
-              className="collapse-button"
-            >
-              🗕
-            </button> */}
-            <StateToggleIcons setWidgetState={setWidgetState} widgetState={widgetState} />
+          <div className="state-toggle-icons">
+            {renderIconButton('Collapse', CollapseIcon, () => setWidgetState('collapsed'))}
+            {renderIconButton('Minimize', MinimizeIcon, () => setWidgetState('minimized'))}
           </div>
           <h3>Locations</h3>
           <SearchBox onSearch={handleSearch} />
           <button className="clear-all-button" onClick={handleClearAll}>
           <i className="fas fa-times clear-all-icon"></i>Clear All
           </button>
-          <LocationList
-            locations={filteredLocations}
-            locationRefs={locationRefs}
-            selectedLocations={selectedLocations}
-            toggleLocation={toggleLocation}
-          />
+          
+          {filteredLocations.length > 0 ? (
+            <LocationList
+                locations={filteredLocations}
+                locationRefs={locationRefs}
+                selectedLocations={selectedLocations}
+                toggleLocation={toggleLocation}
+            />
+            ) : (
+            <p>No locations available.</p>
+            )}
           <AlphabetIndex letters={uniqueLetters} scrollToLetter={scrollToLetter} />
         </>
       )}
@@ -94,35 +105,14 @@ const LocationWidget = () => {
         <div className="collapsed-widget">
           <h3>Locations</h3>
           <div className="collapsed-buttons">
-            <button
-              className="expand-button tooltip"
-              data-tooltip="Expand"
-              onClick={() => setWidgetState('normal')}
-            >
-              <img src={ExpandIcon} alt="Expand" className="icon"></img>
-            </button>
-            <button
-              className="minimize-button tooltip"
-              data-tooltip="Minimize"
-              onClick={() => setWidgetState('minimized')}
-            >
-              
-              <img src={MinimizeIcon} alt="Minimize" className="icon"></img>
-              
-            </button>
+            {renderIconButton('Expand', ExpandIcon, () => setWidgetState('normal'))}
+            {renderIconButton('Minimize', MinimizeIcon, () => setWidgetState('minimized'))}
           </div>
         </div>
       )}
       {widgetState === 'minimized' && (
         <div className="minimized-widget">
-          
-          <button
-            className="minimized-maximize-button tooltip"
-            data-tooltip="Maximize"
-            onClick={() => setWidgetState('normal')}
-          >
-            <img src={MaximizeIcon} alt="Maximize" className="icon"></img>
-          </button>
+          {renderIconButton('Maximize', MaximizeIcon, () => setWidgetState('normal'))}
           <span className="minimized-widget-title">Locations</span>
         </div>
       )}
