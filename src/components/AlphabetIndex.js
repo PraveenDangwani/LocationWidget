@@ -1,4 +1,3 @@
-// src/components/AlphabetIndex.js
 import React from 'react';
 import '../styles/AlphabetIndex.css'
 

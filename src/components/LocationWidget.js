@@ -13,7 +13,7 @@ const LocationWidget = () => {
   const [locations, setLocations] = useState([]);
   const [filteredLocations, setFilteredLocations] = useState([]);
   const [selectedLocations, setSelectedLocations] = useState({});
-  const [widgetState, setWidgetState] = useState('normal'); // 'normal', 'minimized', 'collapsed'
+  const [widgetState, setWidgetState] = useState('normal'); 
   const locationRefs = useRef({});
 
   // Initialize locations and selected state

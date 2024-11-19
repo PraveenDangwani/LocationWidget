@@ -8,7 +8,7 @@ describe('SearchBox Component', () => {
   });
 
   it('calls onSearch when input value changes', () => {
-    const mockOnSearch = jest.fn(); // Mock the onSearch function
+    const mockOnSearch = jest.fn(); 
     render(<SearchBox onSearch={mockOnSearch} />);
 
     const input = screen.getByPlaceholderText('Filter locations...');
@@ -34,7 +34,7 @@ describe('SearchBox Component', () => {
   });
 
   it('clears the input and calls onSearch with an empty string when Clear is clicked', () => {
-    const mockOnSearch = jest.fn(); // Mock the onSearch function
+    const mockOnSearch = jest.fn(); 
     render(<SearchBox onSearch={mockOnSearch} />);
 
     const input = screen.getByPlaceholderText('Filter locations...');

@@ -1,19 +1,18 @@
-/* Wrapper for search box with icon */
 .search-box-wrapper {
     position: relative;
     width: 100%;
-    margin-top: 15px; /* Adjust as needed */
+    margin-top: 15px; 
   }
   
   .search-box {
     width: 100%;
-    padding: 6px 8px 6px 30px; /* Padding to create space for icon */
+    padding: 6px 8px 6px 30px; 
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 14px;
   }
   
-  /* Style for the search icon */
+  
   .search-icon {
     position: absolute;
     left: 10px;
@@ -23,21 +22,21 @@
     font-size: 14px;
   }
   
-  /* Clear button styling */
+  
   .clear-button {
     position: absolute;
-    right: 10px; /* Position at the right of the input */
+    right: 10px; 
     top: 50%;
     transform: translateY(-50%);
     background: none;
     border: none;
-    color: #007bff; /* Match theme */
+    color: #007bff; 
     font-size: 14px;
     cursor: pointer;
   }
   
   .clear-button:hover {
-    color: #0056b3; /* Darker shade for hover effect */
-    text-decoration: underline; /* Optional: underline on hover */
+    color: #0056b3; 
+    text-decoration: underline; 
   }
   

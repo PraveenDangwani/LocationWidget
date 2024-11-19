@@ -3,7 +3,7 @@
     overflow-y: auto;
     border-top: 1px solid #ddd;
     padding-top: 8px;
-    padding-right: 30px; /* Increased space to avoid overlap with the alphabet index */
+    padding-right: 30px; 
   }
   
   .location-item {
@@ -36,8 +36,8 @@
     height: 15px;
     margin-right: 8px;
     vertical-align: middle;
-    border-radius: 2px; /* Optional rounded corners */
-    object-fit: cover; /* Ensures flags are properly scaled */
+    border-radius: 2px; 
+    object-fit: cover; 
   }
   
   

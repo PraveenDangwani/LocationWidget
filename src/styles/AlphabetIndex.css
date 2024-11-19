@@ -1,6 +1,6 @@
 .alphabet-index {
     position: absolute;
-    right: 5px; /* Align alphabet index with the right side of the widget */
+    right: 5px; 
     top: 90px;
     display: flex;
     flex-direction: column;
@@ -10,7 +10,7 @@
   .alphabet-index button {
     background: none;
     border: none;
-    font-size: 12px; /* Smaller font for a simpler look */
+    font-size: 12px; 
     cursor: pointer;
     color: #666;
     display: flex;

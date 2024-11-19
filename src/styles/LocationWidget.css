@@ -1,4 +1,3 @@
-/* Location widget container */
 .location-widget {
     border: 1px solid #ddd;
     padding: 10px;
@@ -15,7 +14,7 @@
     transition: all 0.3s ease;
 }
 
-/* Minimized Widget */
+
 .location-widget.minimized {
     width: 60px;
     height: 200px;
@@ -26,7 +25,7 @@
     justify-content: center;
 }
 
-/* Hide content in minimized state */
+
 .location-widget.minimized h3,
 .location-widget.minimized .state-toggle-icons,
 .location-widget.minimized .search-box-wrapper,
@@ -49,11 +48,11 @@
     height: 100%;
     justify-content: space-between;
 }
-/* Vertical Text for Minimized Title */
+
+
 .minimized-widget-title {
     writing-mode: tb-rl;
     transform: rotate(-180deg);
-    /* writing-mode: vertical-rl; */
     text-orientation: mixed;
     font-size: 14px;
     font-weight: bold;
@@ -61,13 +60,11 @@
     line-height: 1;
     text-align: center;
     margin-bottom: 10px;
-    /* margin: auto 0; */
 }
 
-/* Maximize Button */
+
 .minimized-maximize-button {
     border: none;
-    /* padding: 4px 8px; */
     font-size: 12px;
     cursor: pointer;
     border-radius: 4px;
@@ -79,10 +76,9 @@
     color: #0056b3;
 }
 
-/* Collapsed Widget */
+
 .location-widget.collapsed {
     height: 75px;
-    /* width: 100%; */
     padding: 10px;
     display: flex;
     align-items: center;
@@ -92,7 +88,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Hide unnecessary content in collapsed state */
+
 .location-widget.collapsed .search-box-wrapper,
 .location-widget.collapsed .location-list,
 .location-widget.collapsed .alphabet-index,
@@ -100,7 +96,7 @@
     display: none;
 }
 
-/* Buttons in Collapsed State */
+
 .collapsed-buttons {
     display: flex;
     gap: 10px;
@@ -120,7 +116,7 @@
     color: #0056b3;
 }
 
-/* Title in Collapsed State */
+
 .location-widget.collapsed h3 {
     font-size: 16px;
     font-weight: bold;
@@ -129,7 +125,7 @@
     display: inline-block;
 }
 
-/* Title with button alignment */
+
 .location-widget h3 {
     margin: 0;
     font-size: 16px;
@@ -139,7 +135,7 @@
     padding-right: 10px;
 }
 
-/* Top-right position for Minimize and Collapse buttons */
+
 .state-toggle-icons {
     position: absolute;
     right: 10px;
@@ -148,10 +144,7 @@
 }
 
 .state-toggle-icons button {
-    /* background-color: #007bff;
-    color: white; */
     border: none;
-    /* padding: 5px 8px; */
     font-size: 12px;
     cursor: pointer;
     border-radius: 4px;
@@ -162,7 +155,7 @@
     background-color: #0056b3;
 }
 
-/* Search Box with Filter Icon */
+
 .search-box-wrapper {
     position: relative;
     width: 100%;
@@ -215,7 +208,7 @@
     height: 20px;
 }
 
-/* Alphabet Index Styling */
+
 .alphabet-index {
     position: absolute;
     right: 10px;
@@ -243,13 +236,13 @@
 }
 
 .tooltip {
-    position: relative; /* Needed for the tooltip to position correctly */
+    position: relative; 
   }
   
   .tooltip::after {
-    content: attr(data-tooltip); /* Use the data-tooltip attribute value */
+    content: attr(data-tooltip); 
     position: absolute;
-    top: 100%; /* Position below the element */
+    top: 100%; 
     left: 40%;
     transform: translateX(-50%);
     background-color: #333;
@@ -258,12 +251,12 @@
     border-radius: 3px;
     font-size: 10px;
     white-space: nowrap;
-    opacity: 0; /* Start hidden */
-    pointer-events: none; /* Prevent blocking interactions */
+    opacity: 0; 
+    pointer-events: none; 
     transition: opacity 0.2s ease;
     z-index: 999999;
   }
   
   .tooltip:hover::after {
-    opacity: 1; /* Show tooltip on hover */
+    opacity: 1; 
   }

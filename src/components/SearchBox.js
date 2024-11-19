@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../styles/SearchBox.css';
 
 const SearchBox = ({ onSearch }) => {
-  const [inputValue, setInputValue] = useState(''); // State for search input
+  const [inputValue, setInputValue] = useState(''); 
 
   const handleChange = (event) => {
     const value = event.target.value;

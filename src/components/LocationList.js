@@ -27,7 +27,6 @@ const LocationList = ({ locations, locationRefs, selectedLocations, toggleLocati
               onChange={() => toggleLocation(location)}
             />
             <label>
-              {/* Render the flag icon next to the location */}
               {flag && <img src={flag} alt={country} className="flag-icon" />} 
               {city} - {country}
             </label>

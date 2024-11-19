@@ -1,25 +1,4 @@
-// export const sampleLocations = [
-//     "Amsterdam - Netherlands",
-//     "Berlin - Germany",
-//     "Chicago - USA",
-//     "Delhi - India",
-//     "Edinburgh - UK",
-//     "Florence - Italy",
-//     "Geneva - Switzerland",
-//     "Hong Kong - China",
-//     "Bangalore",
-//     "Kiev - Ukraine",
-//     "Kiev - United Kingdom",
-//     "Krakow",
-//     "Not Provided - Canada",
-//     "Not Provided - China",
-//     "Not Provided - India",
-//     "Not Provided - Poland",
-//     "Not Provided - Russia",
-//     // Add more locations as needed
-//   ];
-  
-export const sampleLocations = [
+  export const sampleLocations = [
     "Amsterdam - Netherlands",
     "Berlin - Germany",
     "Chicago - USA",
