@@ -5,5 +5,11 @@ module.exports = {
       '\\.(css|scss)$': 'identity-obj-proxy', // Mock CSS/SCSS files
       '\\.(png|jpg|jpeg|svg)$': '<rootDir>/__mocks__/fileMock.js', // Mock image imports
     },
+    collectCoverage: true,
+    collectCoverageFrom: [
+    'src/**/*.{js,jsx}',
+    '!src/utils/debounce.js',
+    "!src/index.js" 
+  ],
   };
   

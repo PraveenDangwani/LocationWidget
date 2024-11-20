@@ -25,7 +25,6 @@
     "Dublin - Ireland",
     "Rome - Italy",
     "Tokyo - Japan",
-    "Luxembourg City - Luxembourg",
     "Mexico City - Mexico",
     "Oslo - Norway",
     "Lisbon - Portugal",

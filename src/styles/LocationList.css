@@ -1,10 +1,17 @@
 .location-list {
     max-height: 370px;
-    overflow-y: auto;
+    overflow-y: scroll;
     border-top: 1px solid #ddd;
     padding-top: 8px;
     padding-right: 30px; 
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
+  
+  .location-list::-webkit-scrollbar {
+    display: none; 
+  }
+  
 
 .location-item {
     display: flex;
