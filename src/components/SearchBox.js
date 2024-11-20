@@ -1,18 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import '../styles/SearchBox.css';
 
 const SearchBox = ({ onSearch }) => {
   const [inputValue, setInputValue] = useState(''); 
+  const debounceTimer = useRef(null);
 
   const handleChange = (event) => {
     const value = event.target.value;
-    setInputValue(value); // Update the local state
-    onSearch(value); // Pass the value to the parent handler
+    setInputValue(value);
+    if (debounceTimer.current) {
+      clearTimeout(debounceTimer.current);
+    }
+    debounceTimer.current = setTimeout(() => {
+      onSearch(value); 
+    }, 300); 
   };
 
   const handleClear = () => {
     setInputValue(''); // Clear the input field
     onSearch(''); // Reset the search results in the parent
+    if (debounceTimer.current) {
+      clearTimeout(debounceTimer.current);
+    }
   };
 
   return (
