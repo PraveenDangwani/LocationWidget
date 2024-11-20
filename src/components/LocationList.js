@@ -20,11 +20,12 @@ const LocationList = ({ locations, locationRefs, selectedLocations, toggleLocati
             key={location}
             ref={isFirstOccurrence ? (el) => (locationRefs.current[firstLetter] = el) : null}
             className="location-item"
+            onClick={() => toggleLocation(location)} // Make the row clickable
           >
             <input
               type="checkbox"
               checked={selectedLocations[location] || false}
-              onChange={() => toggleLocation(location)}
+              onChange={(e) => e.stopPropagation()} // Prevent row click when checkbox is clicked
             />
             <label>
               {flag && <img src={flag} alt={country} className="flag-icon" />} 

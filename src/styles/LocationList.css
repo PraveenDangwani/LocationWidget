@@ -4,41 +4,44 @@
     border-top: 1px solid #ddd;
     padding-top: 8px;
     padding-right: 30px; 
-  }
-  
-  .location-item {
+}
+
+.location-item {
     display: flex;
     align-items: center;
-    padding: 4px 0;
+    padding: 8px 12px; 
     font-size: 14px;
     border-bottom: 1px solid #f0f0f0;
-  }
-  
-  .location-item input[type="checkbox"] {
-    margin-right: 8px;
+    cursor: pointer; 
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.location-item:hover {
+    background-color: #f9f9f9; /* Highlight on hover */
+}
+
+
+
+.location-item input[type="checkbox"] {
+    margin-right: 10px;
     transform: scale(0.9);
-  }
-  
-  .location-item label {
+    pointer-events: none; 
+}
+
+.location-item label {
     flex: 1;
     font-size: 14px;
     color: #333;
-  }
+    cursor: pointer;
+}
 
-  .location-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
-  }
-  
-  .flag-icon {
+.flag-icon {
     width: 20px;
     height: 15px;
     margin-right: 8px;
     vertical-align: middle;
     border-radius: 2px; 
     object-fit: cover; 
-  }
-  
-  
-  
+}
+
+
